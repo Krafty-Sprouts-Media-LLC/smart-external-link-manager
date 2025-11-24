@@ -1,0 +1,358 @@
+/**
+ * Filename: admin.css
+ * Author: Krafty Sprouts Media, LLC
+ * Created: 24/11/2025
+ * Version: 2.2.3
+ * Last Modified: 24/11/2025
+ * Description: Smart External Link Manager Admin Styles
+ */
+
+/* Wrapper */
+.selm-wrap {
+    max-width: 1000px;
+    margin: 20px 20px 0 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+.selm-header {
+    background: #fff;
+    padding: 20px 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selm-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #23282d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selm-status-badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.selm-status-active {
+    background: #e7f4e9;
+    color: #0a6c16;
+}
+
+.selm-status-inactive {
+    background: #fbeaea;
+    color: #d63638;
+}
+
+/* Main Content Layout */
+.selm-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+/* Sidebar Navigation */
+.selm-nav {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.selm-nav-item {
+    display: block;
+    padding: 15px 20px;
+    color: #444;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.selm-nav-item:hover {
+    background: #f8f9fa;
+    color: #2271b1;
+}
+
+.selm-nav-item.active {
+    background: #f0f6fc;
+    color: #2271b1;
+    border-left-color: #2271b1;
+}
+
+.selm-nav-item .selm-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    fill: #a0a5aa;
+    transition: fill 0.2s;
+}
+
+.selm-nav-item.active .selm-icon {
+    fill: #2271b1;
+}
+
+.selm-title .selm-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    fill: #23282d;
+}
+
+/* Content Cards */
+.selm-card {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.selm-card.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.selm-card-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.selm-card-title {
+    margin: 0;
+    font-size: 18px;
+    color: #1d2327;
+}
+
+.selm-card-description {
+    color: #646970;
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+/* Form Elements */
+.selm-form-group {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f6f7f7;
+}
+
+.selm-form-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.selm-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.selm-description {
+    color: #646970;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Custom Toggle Switch */
+.selm-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.selm-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.selm-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.selm-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .selm-slider {
+    background-color: #2271b1;
+}
+
+input:focus + .selm-slider {
+    box-shadow: 0 0 1px #2271b1;
+}
+
+input:checked + .selm-slider:before {
+    transform: translateX(24px);
+}
+
+/* Checkbox Groups */
+.selm-checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    background: #f6f7f7;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #dcdcde;
+}
+
+.selm-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Footer Actions */
+.selm-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dcdcde;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selm-reset-btn {
+    color: #d63638 !important;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.selm-reset-btn:hover {
+    color: #b32d2e !important;
+    text-decoration: underline;
+}
+
+/* Deprecation Notice */
+.selm-form-group .notice.inline {
+    margin: 10px 0 0;
+    padding: 10px 12px;
+    border-left: 4px solid #dba617;
+    background: #fff8e5;
+}
+
+.selm-form-group .notice.inline p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Icon Type Specific Fields */
+#selm-svg-file-group,
+#selm-icon-class-group,
+#selm-custom-icon-group {
+    transition: opacity 0.2s ease;
+}
+
+/* Branding Footer */
+.selm-branding {
+    margin-top: 40px;
+    padding: 20px 30px;
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.selm-branding-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selm-branding-text {
+    margin: 0;
+    font-size: 14px;
+    color: #646970;
+    line-height: 1.5;
+}
+
+.selm-branding-link {
+    color: #2271b1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.selm-branding-link:hover,
+.selm-branding-link:focus {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+.selm-branding-link strong {
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .selm-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .selm-nav {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .selm-nav-item {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 15px;
+    }
+    
+    .selm-nav-item.active {
+        border-bottom-color: #2271b1;
+        background: none;
+    }
+    
+    .selm-branding {
+        padding: 15px 20px;
+    }
+    
+    .selm-branding-text {
+        font-size: 13px;
+    }
+}
+
