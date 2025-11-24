@@ -1,9 +1,9 @@
 # Smart External Link Manager
 
-**Version:** 1.0.0  
+**Version:** 2.2.3  
 **Author:** Krafty Sprouts Media, LLC  
 **Requires at least:** WordPress 5.0  
-**Tested up to:** WordPress 6.4  
+**Tested up to:** WordPress 6.8  
 **Requires PHP:** 7.4 or higher  
 **License:** GPL v2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,17 +21,19 @@ Smart External Link Manager is a powerful WordPress plugin that automatically de
   - Add noopener attribute for security
   - Custom CSS class assignment
 - **Icon Integration**: 
-  - Dashicons support (WordPress native icons)
+  - SVG icons (default, multiple styles available)
   - Font Awesome compatibility
   - Custom icon support (HTML/SVG)
   - Flexible positioning (before/after link text)
+  - Dashicons support (deprecated)
 - **Domain Management**: 
   - Exclude specific domains from processing
   - Wildcard subdomain exclusion
   - CSS class-based link exclusion
 - **Post Type Control**: Enable/disable processing for specific post types
+- **Processing Modes**: Choose between server-side (PHP) or client-side (JavaScript) processing
 - **Custom Styling**: Add custom CSS for external links
-- **Admin Interface**: User-friendly settings page in WordPress admin
+- **Admin Interface**: Modern, user-friendly settings page with tabbed navigation
 
 ## Installation
 
@@ -56,11 +58,12 @@ Smart External Link Manager is a powerful WordPress plugin that automatically de
 
 After activation, configure the plugin:
 
-1. Go to **Settings > External Links** in your WordPress admin
+1. Go to **Settings > Smart External Link Manager** in your WordPress admin
 2. Configure the following options:
 
 ### General Settings
-- **Enable External Link Manager**: Toggle the plugin on/off
+- **Enable Plugin**: Toggle the plugin on/off
+- **Processing Mode**: Choose between Server-Side (PHP) for better SEO or Client-Side (JavaScript) for cache compatibility
 - **Post Types**: Select which post types should process external links
 
 ### Link Behavior
@@ -69,10 +72,12 @@ After activation, configure the plugin:
 - **Add noopener attribute**: Add `rel="noopener"` for security
 
 ### Icon Settings
-- **Add External Link Icon**: Enable/disable icon display
-- **Icon Type**: Choose between Dashicons, Font Awesome, or Custom
+- **Enable Icons**: Enable/disable icon display
+- **Icon Type**: Choose between SVG (default), Font Awesome, Custom, or Dashicons (deprecated)
+- **SVG Icon File**: Select from multiple SVG icon styles (when SVG type is selected)
 - **Icon Class**: Specify the CSS class for the icon
 - **Icon Position**: Place icon before or after link text
+- **Custom Icon HTML**: Enter custom HTML/SVG for custom icon type
 
 ### Domain Exclusions
 - Add domains to exclude from external link processing
@@ -134,9 +139,9 @@ smart-external-link-manager/
 │   ├── class-admin.php      # Admin interface
 │   ├── class-core.php        # Core functionality
 │   └── class-frontend.php    # Frontend processing
-├── languages/        # Translation files
 ├── CHANGELOG.md      # Version history
 ├── README.md         # This file
+├── readme.txt        # WordPress.org readme
 └── smart-external-link-manager.php  # Main plugin file
 ```
 
@@ -158,7 +163,11 @@ No, the plugin uses efficient server-side processing and only runs on content th
 Yes, you can exclude links by adding the `no-external` CSS class or by adding domains to the exclusion list.
 
 ### Does it work with caching plugins?
-Yes, the plugin processes links server-side before content is cached, so it works with all caching plugins.
+Yes! The plugin offers two processing modes:
+- **Server-Side (PHP)**: Processes links before content is cached (recommended for SEO)
+- **Client-Side (JavaScript)**: Processes links after page load, perfect for heavily cached sites
+
+You can choose the mode that works best for your setup.
 
 ## Support
 
@@ -169,6 +178,11 @@ For support, feature requests, or bug reports, please visit:
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a complete list of changes.
+
+**Latest Version:** 2.2.3 (November 24, 2025)
+- Fixed WordPress.org Plugin Check compliance issues
+- Enhanced security with proper escaping and safe redirects
+- Updated to WordPress 6.8 compatibility
 
 ## Credits
 

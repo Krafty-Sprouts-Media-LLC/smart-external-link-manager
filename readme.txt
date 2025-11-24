@@ -4,7 +4,7 @@ Tags: external links, seo, links, nofollow, security
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.2.0
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -118,11 +118,41 @@ Yes, you can customize icons through CSS using the `.selm-external-icon` class, 
 
 == Changelog ==
 
+= 2.2.3 =
+* Fixed WordPress.org Plugin Check compliance issues
+* Removed deprecated load_plugin_textdomain() function
+* Fixed all output escaping issues
+* Replaced wp_redirect() with wp_safe_redirect() for security
+* Fixed nonce verification and sanitization
+* Updated tested up to WordPress 6.8
+
+= 2.2.2 =
+* Added developer branding in admin footer
+* Updated settings menu title for clarity
+
+= 2.2.1 =
+* Added SVG icon support as default icon type
+* Multiple SVG icon styles available
+* Dynamic icon settings interface
+* Deprecated Dashicons support
+
+= 2.2.0 =
+* Completely redesigned admin interface
+* Modern card-based layout with tabbed navigation
+* Custom SVG icons for admin interface
+* Improved form controls and user experience
+
+= 2.1.0 =
+* Added client-side (JavaScript) processing mode
+* Performance optimizations with object cache
+* Batch processing for dynamic content
+* Cache-friendly JavaScript handler
+
 = 1.0.0 =
 * Initial release
 * Automatic external link detection
 * Link behavior customization (target="_blank", nofollow, noopener)
-* Icon integration (Dashicons, Font Awesome, Custom)
+* Icon integration (SVG, Font Awesome, Custom, Dashicons)
 * Domain exclusion system
 * CSS class-based exclusion
 * Post type control
@@ -131,8 +161,14 @@ Yes, you can customize icons through CSS using the `.selm-external-icon` class, 
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-Initial release of Smart External Link Manager.
+= 2.2.3 =
+WordPress.org compliance update. All security and coding standard issues resolved.
+
+= 2.2.0 =
+Major admin interface redesign with improved user experience and modern design.
+
+= 2.1.0 =
+Added JavaScript processing mode for cache compatibility. Choose between PHP or JS processing.
 
 == Support ==
 
